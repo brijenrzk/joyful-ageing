@@ -167,7 +167,7 @@ const Page = () => {
                             </TableHeader>
                             <TableBody>
                                 {helperList.map((h) => (
-                                    <TableRow>
+                                    <TableRow key={h.id}>
                                         <TableCell className="font-medium">{h.name}</TableCell>
                                         <TableCell>{h.id}</TableCell>
                                         <TableCell>{h.gender}</TableCell>

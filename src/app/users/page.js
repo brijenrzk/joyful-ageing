@@ -62,7 +62,7 @@ const Page = () => {
                             </TableHeader>
                             <TableBody>
                                 {userList.map((h) => (
-                                    <TableRow>
+                                    <TableRow key={h.id}>
                                         <TableCell className="font-medium">{h.fullname}</TableCell>
                                         <TableCell>{h.contact}</TableCell>
                                         <TableCell>{h.gender}</TableCell>

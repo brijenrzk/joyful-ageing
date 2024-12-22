@@ -176,7 +176,7 @@ const Page = () => {
                             </TableHeader>
                             <TableBody>
                                 {bookings.map((h) => (
-                                    <TableRow>
+                                    <TableRow key={h.time}>
                                         <TableCell className="font-medium">{h.userName}</TableCell>
                                         <TableCell>{h.category}</TableCell>
                                         <TableCell>{h.address}</TableCell>
@@ -191,7 +191,7 @@ const Page = () => {
                                                         <form onSubmit={(e) => assignHelper(e, h.id, h.date)} className="flex flex-col justify-center items-center">
                                                             <select onChange={(e) => setAssign(e.target.value)} required className="w-3/4 mt-6 mb-6 h-14">
                                                                 <option disabled selected>Select</option>
-                                                                {helpers.map((h) => (<option value={h.name}>{h.name}</option>))}
+                                                                {helpers.map((h) => (<option key={h.name} value={h.name}>{h.name}</option>))}
                                                             </select>
                                                             <DialogClose asChild>
                                                                 <Button type="submit" className="w-2/4 h-10" >Assign</Button>
@@ -236,7 +236,7 @@ const Page = () => {
                             </TableHeader>
                             <TableBody>
                                 {allBookings.map((h) => (
-                                    <TableRow>
+                                    <TableRow key={h.time}>
                                         <TableCell className="font-medium">{h.userName}</TableCell>
                                         <TableCell>{h.category}</TableCell>
                                         <TableCell>{h.address}</TableCell>

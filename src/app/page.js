@@ -184,7 +184,7 @@ export default function Home({ children }) {
                 </TableHeader>
                 <TableBody>
                   {category.map((h) => (
-                    <TableRow>
+                    <TableRow key={h.id}>
                       <TableCell className="font-medium">{h.name}</TableCell>
                       <TableCell>{h.price}</TableCell>
                       <TableCell><Button variant="destructive" onClick={() => deleteData(h.id)}>Delete</Button></TableCell>
